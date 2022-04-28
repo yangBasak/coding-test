@@ -1,15 +1,48 @@
 <html>
   <head>
+    <!-- 세가지 숫자 중 가장 작은 숫자 표출 -->
     <meta charset="UTF-8" />
     <title>출력결과</title>
   </head>
   <body>
     <script>
       function solution(a, b, c) {
+        //////////////// 1. Math.min()으로 찾기
+        // let arr = [];
+        // arr.push(a);
+        // arr.push(b);
+        // arr.push(c);
+        // const answer = Math.min(...arr);
+        // /*
+        //   Math.min은 함수이다.
+        //   ()안에 넣은 것은 매개변수를 넣는 것이기에 스프레드 연산자 형태로 쓴다.
+        // */
+
+        //////////////// 2. sort()로 찾기(정렬로 하지 말랬는데 그냥 사용해봄)
+        // let arr = [];
+        // arr.push(a);
+        // arr.push(b);
+        // arr.push(c);
+        // const setArr = arr.sort(function (a, b) {
+        //   return a - b;
+        // });
+        // const answer = setArr[0];
+
+        //////////////// 3. if문 사용. a와 b를 비교하고 마지막으로 c를 비교하여 찾기
+        let answer = 0;
+        if (a < b) {
+          answer = a;
+        } else {
+          answer = b;
+        }
+        if (c < answer) {
+          answer = c;
+        }
+
         return answer;
       }
 
-      console.log(solution(2, 5, 1));
+      console.log(solution(27, 8, 5));
     </script>
   </body>
 </html>
