@@ -1,16 +1,59 @@
 <html>
   <head>
-    <!-- 삼각형 판별하기 -->
+    <!-- 
+      삼각형 판별하기 
+      길이가 서로 다른 A,B,C 세 개 의 막대 길이가 주어지면 이 세 막대로 삼각형을 만들 수 있으면 YES, 없으면  NO
+    -->
     <meta charset="UTF-8" />
     <title>출력결과</title>
   </head>
   <body>
     <script>
       function solution(a, b, c) {
+        //////////////// 1. 내 풀이
+        //가장 큰 값 찾기
+        let max = 0;
+        if (a < b) {
+          max = b;
+        } else {
+          max = a;
+        }
+        if (max < c) {
+          max = c;
+        }
+        //세 값 모두 더한 후 가장 큰 값을 빼서 합을 도출한다.
+        const restAdd = a + b + c - max;
+        // 더한 값과 가장 큰 값과 비교해서 큰 값보다 더한 값이 크면 YES, 반대면 NO 표출
+        let answer = "";
+        if (restAdd > max) {
+          answer = "YES";
+        } else {
+          answer = "NO";
+        }
+
+        ////////////////2. 선생 풀이
+        /*
+          let max = 0;
+          let sum = a+b+c
+          if (a < b) {
+            max = b;
+          } else {
+            max = a;
+          }
+          if (max < c) {
+            max = c;
+          }
+
+          let answer = "YES";
+          if ((sum-max) <= max) {
+            answer = "YES";
+          }
+          // 굳이 else로 코드 길게 할 필요없이 안되는 상황만 바꿔주는구나
+        */
         return answer;
       }
 
-      console.log(solution(13, 33, 17));
+      console.log(solution(6, 7, 11));
     </script>
   </body>
 </html>
