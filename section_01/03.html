@@ -11,10 +11,22 @@
   <body>
     <script>
       function solution(n) {
+        //////////////// 1. 내 풀이
+        // let answer = 0;
+        // let dozenCount = n / 12;
+
+        // if (dozenCount % 1 === 0) {
+        //   answer = dozenCount;
+        // } else {
+        //   answer = Math.ceil(dozenCount);
+        // }
+
+        //////////////// 2. 선생 풀이
+        let answer = Math.ceil(n / 12);
         return answer;
       }
 
-      console.log(solution(178));
+      console.log(solution(25));
     </script>
   </body>
 </html>
