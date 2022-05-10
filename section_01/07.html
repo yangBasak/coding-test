@@ -14,6 +14,24 @@
   <body>
     <script>
       function solution(day, arr) {
+        //////////////// 1. 내 풀이
+        // let violate = [];
+        // for (let item of arr) {
+        //   let str = item.toString();
+        //   if (str.slice(-1) == day) {
+        //     violate.push(item);
+        //   }
+        // }
+        // let answer = violate.length;
+
+        //////////////// 1. 선생 풀이
+        let answer = 0;
+        for (let item of arr) {
+          if (item % 10 === day) {
+            answer++;
+          }
+        }
+
         return answer;
       }
 
