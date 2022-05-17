@@ -8,6 +8,39 @@
   <body>
     <script>
       function solution(s) {
+        //////////////// 1. 내 풀이
+        /*
+          문자를 배열로 변환
+          for로 순환
+          A일 시 해당 인덱스 번호에 해당하는 부분 제외 시키고
+          동일 인덱스에 #을 집어넣음
+        */
+        // const answer = [...s];
+
+        // for (let i = 0; i < answer.length; i++) {
+        //   if (answer[i] === "A") {
+        //     answer.splice(i, 1, "#");
+        //   }
+        // }
+
+        //////////////// 2. 선생 풀이
+        /*
+          for...of로 문자열을 하나하나 꺼냄
+          하나의 문자열이 A이면 #을 넣고
+          아니면 그 문자열을 다시 넣음
+        */
+        // let answer = "";
+        // for (let x of s) {
+        //   if (x === "A") {
+        //     answer = answer + "#";
+        //   } else {
+        //     answer = answer + x;
+        //   }
+        // }
+        //////////////// 3. replace() 활용
+        let answer = s; // 문자열은 주소가 참조되는게 아니라 값이 복사되는거라 아래에서 s를 수정해봤자 answer은 영향 없음. 얕은 복사가 ㄴㄴ
+        answer = answer.replace(/A/g, "#");
+
         return answer;
       }
 
@@ -16,22 +49,3 @@
     </script>
   </body>
 </html>
-
-<!-- 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(s){
-    
-                return answer;
-            }
-            
-            let str="BANANA";
-            console.log(solution(str));
-        </script>
-    </body>
-</html> -->
