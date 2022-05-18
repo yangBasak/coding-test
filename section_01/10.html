@@ -9,6 +9,16 @@
   <body>
     <script>
       function solution(s, t) {
+        //////////////// 1. 내 풀이
+        // let answer = 0;
+        // for (let item of s) {
+        //   if (item === t) {
+        //     answer = answer + 1;
+        //   }
+        // }
+        //////////////// 2. 선생 다른 풀이(내장함수)
+        let answer = s.split(t).length - 1;
+
         return answer;
       }
 
