@@ -8,6 +8,13 @@
   <body>
     <script>
       function solution(s) {
+        //////////////// 1. 내 풀이
+        let answer = 0;
+        for (let item of s) {
+          if (item === item.toUpperCase()) {
+            answer = answer + 1;
+          }
+        }
         return answer;
       }
 

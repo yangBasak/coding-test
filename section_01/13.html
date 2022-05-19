@@ -8,6 +8,14 @@
   <body>
     <script>
       function solution(s) {
+        let answer = "";
+        for (item of s) {
+          if (item.toLowerCase() === item) {
+            answer = answer + item.toUpperCase();
+          } else {
+            answer = answer + item.toLowerCase();
+          }
+        }
         return answer;
       }
 
