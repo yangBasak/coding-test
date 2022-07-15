@@ -1,7 +1,6 @@
 <html>
   <head>
-    <!-- 소문자로 된 한개의 문자열이 입력되면 중복된 문자를 제거하고 출력하는 프로그램을 작성하
-세요.
+    <!-- 소문자로 된 한개의 문자열이 입력되면 중복된 문자를 제거하고 출력하는 프로그램을 작성하세요.
 제거된 문자열의 각 문자는 원래 문자열의 순서를 유지합니다. -->
     <meta charset="UTF-8" />
     <title>출력결과</title>
@@ -9,9 +8,30 @@
   <body>
     <script>
       function solution(s) {
+        //////////////// 1. 내 풀이
+        // let arr = [];
+        // for(let ele of s){
+        //   if(!arr.includes(ele)){
+        //     arr.push(ele);
+        //   }
+        // }
+        // let answer =  arr.join('');
+
+        //////////////// 2. 선생 풀이
+        let answer;
+        
+        for(let i = 0; i < s.length; i++){
+          if(s.indexOf(s[i]) === i){
+            answer = answer + s[i];
+          }
+        }
+        // 0 1 2 0 0 1 2 7
+        // 0 1 2 3 4 5 6 7
         return answer;
       }
       console.log(solution("ksekkset"));
+      // 0 1 2 0 0 1 2 7
+
     </script>
   </body>
 </html>

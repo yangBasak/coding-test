@@ -8,6 +8,26 @@
   <body>
     <script>
       function solution(s) {
+        //////////////// 1. 내 풀이
+        let answer = ""
+        let arr = [...s]
+        let center = Math.floor(s.length / 2)
+        if(s.length % 2 === 0){
+          //짝수인거
+          answer = `${arr[center-1]}${arr[center]}`
+        }else{
+          //홀수
+          answer = arr[center]
+        }
+        //////////////// 2. 선생 풀이
+        // let answer;
+        // let mid = Math.floor(s.length / 2);
+        // if(s.length % 2 === 0) {
+        //   answer = s.substring(mid, mid+1);
+        //   // s.substr도 있당
+        // }else{
+        //   answer = s.substring(mid-1, mid+1);
+        // }
         return answer;
       }
       console.log(solution("study"));
