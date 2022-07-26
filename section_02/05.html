@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){  
+                //////////////// 1. 내 풀이 : 중복되었을때의 처리가 안됐네. 등수라는 단어에 집중해서 반드시 순위를 세워야된다는 생각을 했던 것이 실수. 좀 더 다양하게 생각해봐
+                // let answer = []
+                // let order = []
+                // let arr2 = [...arr]
+                // for(let i = 0; i<arr.length; i++){
+                //     let max = arr2[0]
+                //     for(let j = 0; j<arr2.length; j++){
+                //         if(max < arr2[j]){
+                //             max = arr2[j]    
+                //         }
+                //         if(arr2.length === 1){
+                //             max = arr2[j]
+                //         }
+                //     }
+                //     order.push(max)
+                //     arr2.splice(arr2.indexOf(max), 1);
+                // }
+                // for(let i = 0; i<arr.length; i++){
+                //     for(let j = 0; j<order.length; j++){
+                //         if(arr[i] === order[j]){
+                //             answer.push(j+1)
+                //         }
+                //     }   
+                // }
+                //////////////// 2. 해설 본 후 풀이
+                // let answer = [1,1,1,1,1]
+                // for(let i = 0; i<arr.length; i++){
+                //     for(let j = 0; j<arr.length; j++){
+                //         if(arr[i]<arr[j]){
+                //             answer[i] = answer[i] + 1
+                //         }
+                //     }
+                // }
+                //////////////// 3. 선생 풀이
+                let n = arr.length
+                let answer = Array.from({length:n},()=>1)
+                for(let i = 0; i<n; i++){
+                    for(let j = 0; j<n; j++){
+                        if(arr[i]<arr[j]){
+                            answer[i] = answer[i] + 1
+                        }
+                    }       
+                }
+                return answer;
+            }
+            let arr=[87, 89, 92, 100, 76];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

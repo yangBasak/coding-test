@@ -8,6 +8,17 @@
   <body>
     <script>
       function solution(s) {
+        let answer = [];
+        //////////////// 1. 내 풀이
+        // for(let i = 0; i < s.length; i++){
+        //   if(s.indexOf(s[i]) === i) {
+        //     answer.push(s[i])
+        //   }
+        // }
+        //////////////// 2. 선생 풀이
+        answer = s.filter((value, i)=>{
+          return s.indexOf(v) === i
+        })
         return answer;
       }
       let str = ["good", "time", "good", "time", "student"];

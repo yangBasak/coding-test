@@ -1,0 +1,54 @@
+<html>
+    <head>
+      <!-- 선생님이 N(1<=N<=1000)명의 학생을 일렬로 세웠습니다. 일렬로 서 있는 학생의 키가 앞에
+서부터 순서대로 주어질 때, 맨 앞에 서 있는 선생님이 볼 수 있는 학생의 수를 구하는 프로그
+램을 작성하세요. (앞에 서 있는 사람들보다 크면 보이고, 작거나 같으면 보이지 않습니다.)
+ -->
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){   
+                //////////////// 1. 내 풀이      
+                // let answer = 0;
+                // let answerArr = []
+                // for(let i = 0; i<arr.length; i++){
+                //     if(i === 0){
+                //         // 첫 번째 숫자는 무조건 카운트
+                //         answer++
+                //         answerArr.push(arr[i])
+                //     }else{
+                //         // 두 번째 숫자부터 앞의 숫자와 비교
+                //         let isTall = 0
+                //         for(let j = 0; j < i; j++){       
+                //             if(arr[j] >= arr[i]){
+                //                 //선택된 숫자보다 앞에 크거나 같은 숫자가 있다면
+                //                 isTall++
+                //             }
+                //         }
+                //         if(isTall === 0){
+                //             answer++
+                //             answerArr.push(arr[i])
+                //         }
+                //     }
+                // }
+                // console.log(answerArr)
+
+                //////////////// 2. 선생 풀이
+                let answer = 0
+                let max = arr[0]
+                for(let i = 0; i<arr.length; i++){
+                    if(max < arr[i]){
+                        answer++
+                        max = arr[i]
+                    }
+                }
+                return answer;
+            }
+            let arr=[130, 135, 148, 140, 145, 150, 150, 153];
+            // 130 135 148 150 153
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
