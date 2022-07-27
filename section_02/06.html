@@ -6,7 +6,56 @@
     <body>
         <script>
             function solution(arr){  
-         
+            //////////////// 1. 내 풀이
+                // 각 행의 합, 각 행의 열의 합, 두 대각선의 합 중 가장 큰 것을 각자 구해서 한 배열로 나열시킨 다음 각 배열의 합을 구해서 가장 높은 값 리턴
+                // let arrLength = 5;
+                // let sumArr = [...arr] //행 배열 먼저 넣어놓음
+                // let colArr = [] // 열 배열
+                // let crossArr = [] // 정 대각선
+                // let crossArr2 = [] //역 대각선
+                // for(let i = 0; i<5; i++){
+                //     colArr[i] = Array.from({length:0})
+                //     for(let j = 0; j<arr.length; j++){
+                //         colArr[i].push(arr[j][i])
+                //     }                   
+                //     crossArr.push(arr[i][i])
+                //     crossArr2.push(arr[i][arrLength-i-1])
+                // }
+
+                // sumArr.push(...colArr)
+                // sumArr.push(crossArr)
+                // sumArr.push(crossArr2)
+
+                // let answer = 0;
+                // sumArr.forEach((ele)=>{
+                //     const eachSum = ele.reduce((prev, cur)=>{
+                //     return prev + cur
+                //     })
+                //     if(eachSum > answer){
+                //         answer = eachSum
+                //     }
+                // })
+                
+            //////////////// 2. 선생 풀이
+                let answer = Number.MIN_SAFE_INTEGER;
+                let n = arr.length;
+                let sum1=sum2=0 //sum2=0, sum1=sum2
+                //행,열의 최대값
+                for(let i = 0; i<n; i++){
+                    sum1=sum2=0
+                    for(let j = 0; j<n; j++){
+                        sum1 = sum1 + arr[i][j];
+                        sum2 = sum2 + arr[j][i];
+                    }
+                    answer=Math.max(answer, sum1, sum2)
+                }
+                sum1=sum2=0
+                // 대각선들의 최대값
+                for(let i = 0; i<n; i++){
+                    sum1 = sum1 + arr[i][i]
+                    sum2 = sum2 + arr[i][n-i-1]
+                }
+                    answer=Math.max(answer, sum1, sum2)
                 return answer;
             }
 
