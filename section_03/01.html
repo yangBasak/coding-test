@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                //////////////// 1. 내 풀이
+                // let answer = ""
+                // const lowerStr = s.toLowerCase()
+                // let strArr = Array.from(lowerStr)
+                // for(let i = 0; i<strArr.length; i++){
+                //     if(strArr[i] !== strArr[strArr.length-1-i]){
+                //         answer = "NO"
+                //         break
+                //     }
+                //     answer = "YES"
+                // }
+
+                //////////////// 2. 선생 풀이
+                // let answer = "YES";
+                // s = s.toLowerCase()
+                // let len = s.length;
+                // for(let i = 0; i<Math.floor(len/2); i++){ // length 모두 돌 필요가 없네
+                //     if(s[i] !== s[len-i-0]) return "NO"
+                // }
+
+                //////////////// 2. reverse() 메소드 사용 풀이
+                let answer = "YES";
+                s = s.toLowerCase();
+                if(s.split('').reverse().join('') !== s) return "NO" 
+                return answer;
+            }
+            
+            let str="gooG";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
