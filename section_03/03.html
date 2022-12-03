@@ -5,14 +5,41 @@
     </head>
     <body>
         <!--
-            자와 숫자가 섞여있는 문자열이 주어지면 그 중 숫자만 추출하여 그 순서대로 자연수를 만듭니다. 
+            문자와 숫자가 섞여있는 문자열이 주어지면 그 중 숫자만 추출하여 그 순서대로 자연수를 만듭니다. 
             만약 “tge0a1h205er”에서 숫자만 추출하면 0, 1, 2, 0, 5이고 이것을 자연수를 만들면 1205이 됩니다. 
             추출하여 만들어지는 자연수는 100,000,000을 넘지 않습니다.
         -->
         <script>
             function solution(str){
-               
-                
+                //////////////// 1. 내 풀이
+            //    let arr = Array.from(str)
+            //    const reg = /[^a-zA-Z]/g
+            //    let num = arr.filter((item)=>{
+            //     if(reg.test(item)){
+            //         return item
+            //     }
+            //    })
+            //    const joinArr = num.join('')
+            //    let answer = parseInt(joinArr)
+
+            //////////////// 2. 내 풀이
+            //     let arr = Array.from(str)
+            //    let num = arr.filter((item)=>{
+            //     if(!isNaN(item)){
+            //         return item
+            //     }
+            //    })
+            //    const joinArr = num.join('')
+            //    let answer = parseInt(joinArr)
+
+            //////////////// 3. 선생 풀이
+            let res = ""
+            for(let x of str){
+                if(!isNaN(x)) res+=x
+            }
+            let answer = parseInt(res)
+
+            return answer
             }
             
             let str="g0en2T0s8eSoft";
