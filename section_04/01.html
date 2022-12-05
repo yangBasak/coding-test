@@ -10,6 +10,38 @@
          -->
         <script>
             function solution(n, arr){
+                //////////////// 1. 내 풀이
+                // let answer = 0
+                // let num = Number.MIN_SAFE_INTEGER
+                // arr.forEach((item)=>{
+                //     let sum = item.toString().split('').reduce((acc,cur)=>{
+                //         return Number(acc) + Number(cur)
+                //     })
+                //     if(sum > num){
+                //         answer = item
+                //         num = sum
+                //     }else if(sum === num){
+                //         answer = Math.max(item, answer)
+                //     }                   
+                // })
+                //////////////// 2. 선생 풀이(숫자로만 풀기)
+                let answer, max = Number.MIN_SAFE_INTEGER;
+                for(let x of arr){
+                    let sum = 0, tmp = x;
+                    while(tmp){
+                        sum+=(tmp%10) //10을 나눈 나머지를 구하면 끝자릿수 숫자가 나옴
+                        tmp=Math.floor(tmp/10) //10을 나눈 몫을 tmp로 넣어서 0이 될때까지 while을 돌림
+                    } 
+                    if(sum > max){
+                        max = sum;
+                        answer = x;
+                    } else if(sum===max){
+                        if(x>answer) answer = x
+                    }
+                }
+
+
+                return answer
             }
             let arr=[128, 460, 603, 40, 521, 137, 123];
             console.log(solution(7, arr));
