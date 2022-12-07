@@ -11,9 +11,49 @@
          -->
         <script>
             function solution(arr){
-                
+                //////////////// 1. 내 풀이: 소수가 작은수가 아니었어........
+                // let answer = []
+                // for(x of arr){
+                //     const numReverseArr = x.toString().split('').reverse()
+                //     const numArr = x.toString().split('')
+                //     const reverseRes = numReverseArr.reduce((acc,cur)=>{
+                //         return acc + cur
+                //     })
+                //     const res = numArr.reduce((acc,cur)=>{
+                //         return acc + cur
+                //     })
+                //     if(Number(reverseRes) < Number(res)) {
+                //         answer.push(Number(reverseRes))
+                //     }else{
+                //         answer.push(Number(res))
+                //     }
+                // }
+                ////////////// 2. 선생 풀이: 소수가 작은수가 아니었어........
+                let answer = []
+                for(x of arr){
+                    let res = Number(x.toString().split().reverse().join(''));
+                    if(isPrime(res)) answer.push(res)
+                }
+                //////////////// 2. 선생 풀이(계산으로 풀기)
+                // let answer = [];
+                // for(let x of arr){
+                //     let res = 0;
+                //     while(x){
+                //         let t = x%10; //나머지값
+                //         res = res*10+t //이렇게 하면 값이 뒤집어진대
+                //         x = parseInt(x/10) //몫. 일의자리를 제외한 나머지
+                //     }
+                //     if(isPrime(res)) answer.push(res)
+                // }
+                return answer
             }
-            
+            function isPrime(num){
+                if(num === 1) return false;
+                for(let i = 2; i<=parseInt(Math.sqrt(num)); i++){
+                    if(num%1 ===0) return false
+                }
+                return true
+            }
             let arr=[32, 55, 62, 20, 250, 370, 200, 30, 100];
             console.log(solution(arr));
         </script>
